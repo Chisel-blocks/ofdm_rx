@@ -1,0 +1,9 @@
+[submodule "f2_symbol_sync"]
+	path = f2_symbol_sync
+	url = git@github.com:Chisel-blocks/f2_symbol_sync.git
+[submodule "ofdm_demodulator"]
+	path = ofdm_demodulator
+	url = git@github.com:Chisel-blocks/ofdm_demodulator.git
+[submodule "channel_equalizer"]
+	path = channel_equalizer
+	url = git@github.com:Chisel-blocks/channel_equalizer.git
