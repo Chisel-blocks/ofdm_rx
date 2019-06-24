@@ -24,18 +24,19 @@ git submodule update --init
 #sbt assembly
 
 #Recursively init submodules
-#SUBMODULES="\
-#    f2_dsp \
-#    f2_cm_serdes_lane \
-#    "
-#for module in $SUBMODULES; do
-#    cd ${DIR}/${module}
-#    if [ -f "./init_submodules.sh" ]; then
-#        ./init_submodules.sh
-#    fi
-#    sbt publishLocal
-#    cd ${DIR}
-#done
+SUBMODULES="\
+    f2_symbol_sync \
+    ofdm_demodulator\
+    channel_equalizer\
+    "
+for module in $SUBMODULES; do
+    cd ${DIR}/${module}
+    if [ -f "./init_submodules.sh" ]; then
+        ./init_submodules.sh
+    fi
+    sbt publishLocal
+    cd ${DIR}
+done
 
 
 exit 0

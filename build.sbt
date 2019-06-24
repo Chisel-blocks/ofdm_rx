@@ -95,5 +95,7 @@ libraryDependencies  ++= Seq(
 //libraryDependencies += "edu.berkeley.cs" %% "eagle_serdes" % "0.0-SNAPSHOT"
 
 // Put your git-version controlled snapshots here
-//libraryDependencies += "edu.berkeley.cs" %% "hbwif" % gitSubmoduleHashSnapshotVersion("hbwif")
+libraryDependencies += "edu.berkeley.cs" %% "f2_symbol_sync" % gitSubmoduleHashSnapshotVersion("f2_symbol_sync")
+libraryDependencies += "edu.berkeley.cs" %% "ofdm_demodulator" % gitSubmoduleHashSnapshotVersion("ofdm_demodulator")
+libraryDependencies += "edu.berkeley.cs" %% "channel_equalizer" % gitSubmoduleHashSnapshotVersion("channel_equalizer")
 
