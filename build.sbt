@@ -8,7 +8,7 @@ name := "ofdm_rx"
 
 version := scala.sys.process.Process("git rev-parse --short HEAD").!!.mkString.replaceAll("\\s", "")+"-SNAPSHOT"
 
-scalaVersion := "2.11.11"
+scalaVersion := "2.12.3"
 
 // [TODO] what are these needed for? remove if obsolete
 def scalacOptionsVersion(scalaVersion: String): Seq[String] = {
@@ -69,10 +69,6 @@ val defaultVersions = Map(
 libraryDependencies ++= (Seq("chisel3","chisel-iotesters","dsptools").map {
   dep: String => "edu.berkeley.cs" %% dep % sys.props.getOrElse(dep + "Version", defaultVersions(dep)) })
 
-
-//This is (mainly) for TheSDK testbenches, may become obsolete
-libraryDependencies += "com.gilt" %% "handlebars-scala" % "2.1.1"
-
 libraryDependencies  ++= Seq(
 //  // Last stable release
   "org.scalanlp" %% "breeze" % "0.13.2",
@@ -95,7 +91,7 @@ libraryDependencies  ++= Seq(
 //libraryDependencies += "edu.berkeley.cs" %% "eagle_serdes" % "0.0-SNAPSHOT"
 
 // Put your git-version controlled snapshots here
-libraryDependencies += "edu.berkeley.cs" %% "f2_symbol_sync" % gitSubmoduleHashSnapshotVersion("f2_symbol_sync")
+libraryDependencies += "Chisel-blocks" %% "f2_symbol_sync" % gitSubmoduleHashSnapshotVersion("f2_symbol_sync")
 libraryDependencies += "edu.berkeley.cs" %% "ofdm_demodulator" % gitSubmoduleHashSnapshotVersion("ofdm_demodulator")
 libraryDependencies += "edu.berkeley.cs" %% "channel_equalizer" % gitSubmoduleHashSnapshotVersion("channel_equalizer")
 
